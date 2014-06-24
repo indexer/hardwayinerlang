@@ -4,6 +4,7 @@
 -export([double/1]).
 -export([hello_world/0]).
 -export([convert/2]).
+-export([converter_length/1]).
 
 double(X) ->
   2*X.
@@ -15,6 +16,15 @@ convert(M, inches) ->
 
 convert(N,centimeter) ->
   N * 2.54 .
+
+%in the funtion tuples are start with { and close with }
+%tuples use ways to group thing together to make understandable
+converter_length({centimeter,Y}) ->
+  {centimeter,Y / 2.54};
+
+converter_length({inches,Z})->
+  {inches,Z * 2.54}.
+
   
 %In Erlang Ways Varible must start with Capital Letter'
 %Atom must start with small Letter
