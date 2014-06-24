@@ -5,6 +5,7 @@
 -export([hello_world/0]).
 -export([convert/2]).
 -export([converter_length/1]).
+-export([list_length/1]).
 
 double(X) ->
   2*X.
@@ -24,6 +25,14 @@ converter_length({centimeter,Y}) ->
 
 converter_length({inches,Z})->
   {inches,Z * 2.54}.
+
+%list_lenght 
+list_length([])->
+  0;
+
+list_length([First|Reset])->
+  1+ list_length(Reset).
+  
 
   
 %In Erlang Ways Varible must start with Capital Letter'
